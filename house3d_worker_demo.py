@@ -13,17 +13,17 @@ def show_img(img, winname="TEST"):
 def image_cut(img, num=10):
     print("Hien thi anh goc")
     show_img(img, "Anh dau vao")
-    small_imgs_dic = {}
+    small_imgs_dic = list()
     high = img.shape[0]
     smal_high = high // num
 
     for i in range(num):
         if i < num - 1:
             simage = img[i * smal_high:(i + 1) * smal_high:, :, :]
-            small_imgs_dic[i] = convert_to_grayscale(simage)
+            small_imgs_dic.append(convert_to_grayscale(simage))
         else:
             simage = img[i * smal_high:, :, ]
-            small_imgs_dic[i] = convert_to_grayscale(simage)
+            small_imgs_dic.append(convert_to_grayscale(simage))
         print("Hien thi anh da duoc cat va chuyen mau {}".format(i+1))
         show_img(small_imgs_dic[i], "Anh nho {}".format(i+1))
 
@@ -36,10 +36,7 @@ def convert_to_grayscale(image):
     return converted_img
 
 
-def image_merge(small_imags_dic):
-    images = []
-    for i in sorted(small_imags_dic.keys()):
-        images.append(small_imags_dic[i])
+def image_merge(images):
     return np.concatenate(images, axis=0)
 
 
