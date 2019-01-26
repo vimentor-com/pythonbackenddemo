@@ -5,7 +5,13 @@ Group facebôk để thảo luận các vấn đề liên quan tới lộ trình
 
 # Cách chạy ứng dụng
 ## Yêu cầu 
-- Ứng dụng này được viết theo python3. Nên để chạy được ứng dụng cần phải cài đặt python3 và pip3
+- Ứng dụng này được viết theo python3. Nên để chạy được ứng dụng cần phải cài đặt python3 và pip3 và một số gói khác
+
+        sudo unlink /etc/localtime 
+        sudo ln -s /usr/share/zoneinfo/Etc/GMT+7 /etc/localtime
+        sudo apt update 
+        sudo apt install -y git python3 python3-pip libsm6 libxext6 libfontconfig1 libxrender1 python3-tk
+        
 ## Cài các gói phụ trợ 
 - Chạy lệnh sau trong thư mục pythonbackenddemo để cài các gói phụ trợ 
 
