@@ -12,6 +12,7 @@ Group facebôk để thảo luận các vấn đề liên quan tới lộ trình
         sudo apt update 
         sudo apt install -y git python3 python3-pip libsm6 libxext6 libfontconfig1 libxrender1 python3-tk
         
+- Chú ý: Trong bước "sudo unlink /etc/localtime" có thể báo lỗi nếu file /etc/localtime không tồn tại. Lệnh "sudo ln -s /usr/share/zoneinfo/Etc/GMT+7 /etc/localtime" cũng có thể báo lỗi nếu file /etc/localtime đã tồn tại. Nếu xảy ra hai lỗi này, hãy bỏ qua nó và chạy tiếp những lệnh sau. Chương trình vẫn có thể hoạt động bình thường.
 ## Cài các gói phụ trợ 
 - Chạy lệnh sau trong thư mục pythonbackenddemo để cài các gói phụ trợ 
 
