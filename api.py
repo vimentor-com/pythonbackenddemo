@@ -10,11 +10,13 @@ app = Flask(__name__)
 
 @app.route("/change_img_color", methods=["POST"])
 def convert_img_color():
-    # read image file string data
+    # Doc anh gui len tu phia client
     filestr = request.files['image'].read()
-    # convert string data to numpy array
+    # Do anh duoc gui len co dang du lieu chuoi (string),
+    # can duoc chuyen doi sang dang ma tran numpy
+    # de tien thao tac ve sau
     npimg = np.fromstring(filestr, np.uint8)
-    # convert numpy array to image
+    # Chuyen doi du lieu numpy array ve du lieu ma tran anh chuan
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
     process_img(img)
 
