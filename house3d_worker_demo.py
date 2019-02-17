@@ -11,8 +11,6 @@ def show_img(img, winname="TEST"):
 
 
 def image_cut(img, num=10):
-    print("Hien thi anh goc")
-    show_img(img, "Anh dau vao")
     small_imgs_dic = list()
     high = img.shape[0]
     smal_high = high // num
@@ -24,8 +22,6 @@ def image_cut(img, num=10):
         else:
             simage = img[i * smal_high:, :, ]
             small_imgs_dic.append(convert_to_grayscale(simage))
-        print("Hien thi anh da duoc cat va chuyen mau {}".format(i+1))
-        show_img(small_imgs_dic[i], "Anh nho {}".format(i+1))
 
     return small_imgs_dic
 
@@ -40,14 +36,17 @@ def image_merge(images):
     return np.concatenate(images, axis=0)
 
 
-if __name__ == '__main__':
-    img = cv2.imread("images/input_sample.jpg")
+def process_img(img):
     print('Cut anh goc thanh 3 anh nho hon')
     cut_image = image_cut(img, num=3)
     print('Ghep lai cac anh nho da duoc cat va chuyen mau')
     merged_img = image_merge(cut_image)
-    print("Hien thi anh sau khi da chuyen mau")
-    show_img(merged_img, "Anh sau khi da duoc xu ly")
     print("Luu anh da chuyen doi vao cung thu muc voi anh goc")
     cv2.imwrite("images/output_sample.jpg", merged_img)
     print("Hoan thanh viec chuyen mau cho anh")
+
+
+if __name__ == '__main__':
+    img = cv2.imread("images/input_sample.jpg")
+    process_img(img)
+
