@@ -12,9 +12,10 @@ RUN apt update \
 
 RUN git clone https://github.com/vimentor-com/pythonbackenddemo.git
 RUN cd pythonbackenddemo && \
+    git checkout 6-gunicorn-flask && \
     pip3 install -r requirements.txt
 RUN mkdir -p ~/.config/matplotlib/
 RUN touch ~/.config/matplotlib/matplotlibrc
 RUN echo "backend: Agg" > ~/.config/matplotlib/matplotlibrc
 
-ENTRYPOINT ["/root/pythonbackenddemo/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/pythonbackenddemo/entrypoint.sh"]
