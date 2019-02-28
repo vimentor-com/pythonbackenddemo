@@ -16,3 +16,5 @@ RUN cd pythonbackenddemo && \
 RUN mkdir -p ~/.config/matplotlib/
 RUN touch ~/.config/matplotlib/matplotlibrc
 RUN echo "backend: Agg" > ~/.config/matplotlib/matplotlibrc
+
+ENTRYPOINT ["/root/pythonbackenddemo/entrypoint.sh"]
