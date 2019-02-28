@@ -36,7 +36,7 @@ Group facebôk để thảo luận các vấn đề liên quan tới lộ trình
 
 ### B2. Khởi chạy docker container 
 
-        sudo docker run -it --name='pythonbackenddemo' demoimg:v0.2 bash
+        sudo docker run -it --name='pythonbackenddemo' -p 8000:8000 demoimg:v0.2 bash
 
 Log xuất hiện trên màn hình sau khi chạy docker container
 
